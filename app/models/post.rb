@@ -9,4 +9,11 @@ class Post < ActiveRecord::Base
     content
   end
 
+  def self.search(search)
+    if search
+      where("lower(content) LIKE ?", "%#{search.downcase}%")
+    else
+      self.all
+    end
+  end
 end

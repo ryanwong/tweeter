@@ -1,5 +1,8 @@
 <div class="pull-right">
-  <%=link_to "Comment", new_comment_path(post_id: @post.id), class:"btn btn-primary"%>
+  <div class="btn-grou">
+    <%=link_to "Comment", new_comment_path(post_id: @post.id), class:"btn btn-primary"%>
+    <%=link_to "Edit", edit_post_path(@post), class:"btn btn-primary"%>
+  </div>
 </div>
 <h1>
   <%= link_to fa_icon("arrow-left"), posts_path %>
