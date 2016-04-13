@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post)
     else
-      redirect_to :new_post_path(@post)
+      redirect_to new_post_path(@post)
     end
   end
 
@@ -35,6 +35,12 @@ class PostsController < ApplicationController
     else
       redirect_to edit_post_path(@post)
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+      redirect_to root_path
   end
 
   private
