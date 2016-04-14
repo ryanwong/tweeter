@@ -27,4 +27,5 @@ class Post < ActiveRecord::Base
       self.all
     end
   end
+  
 end
