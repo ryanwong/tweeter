@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  root "posts#index"
 
-  resources :users, only: [:index]
+
+  root "user_sessions#new"
+
+  resources :users
   resources :posts
   resources :comments, except: [:index, :show]
+  resources :user_sessions
+
+  get 'login' => 'user_sessions#new', :as => :login
+  get 'logout' => 'user_sessions#destroy', :as => :logout
 end
